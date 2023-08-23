@@ -15,7 +15,7 @@ const Castes = () => {
 
     return (
         <>
-            <div className='grid grid-flow-col p-4 gap-x-4 '>
+            <div className='grid grid-flow-col p-4 gap-x-4 mt-6'>
                 <div className='p-4 bg-white text-red-400 text-lg font-medium rounded-md'>Castes </div>
                 <div className='p-4 bg-red-400 text-white rounded-md'><Link to={`/caste/${caste1}`}>Agarwal</Link></div>
                 <div className='p-4 bg-red-400 text-white rounded-md'><Link to={`/caste/${caste2}`}>Brahmin</Link></div>
