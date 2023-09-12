@@ -4,17 +4,18 @@ import Hero from '../components/Hero'
 import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import Castes from '../components/Castes'
+import Float from '../components/float'
 
 
 const Home = () => {
   return (
-    <div id="root">
-    <Navbar />
-    <Hero />
-    <Castes />
-    <Ads />
-    <Footer /> 
-  </div>
+    <div className=''>
+      <Navbar />
+      <Hero />
+      <Castes />
+      <Ads />
+      <Footer />
+    </div>
   )
 }
 

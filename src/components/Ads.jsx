@@ -14,10 +14,10 @@ const Ads = () => {
     });
 
     return (
-        <div className='h-max w-full bg-white items-center mt-5 flex flex-row justify-center'>
+        <div className='h-max w-full bg-white items-center mt-5 flex flex-col md:flex-row  justify-center'>
             <div className='flex flex-col gap-5 items-center m-5'>
                 <h1 className='font-bold text-3xl text-red-700 underline-offset-2'>Grooms (Boys)</h1>
-                <div className="grid grid-flow-row grid-cols-2 gap-4">
+                <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 gap-4">
                     {adsList
                         .filter((ads) => ads.gender === "male")
                         .map((ads) => {
@@ -40,7 +40,7 @@ const Ads = () => {
             </div>
             <div className='flex flex-col items-center gap-5 m-5'>
                 <h3 className='font-bold text-3xl text-red-700 underline-offset-2'>Brides (Girls)</h3>
-                <div className="grid grid-flow-row grid-cols-2 gap-2">
+                <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 gap-2">
                         {adsList
                             .filter((ads) => ads.gender === "female")
                             .map((ads) => {

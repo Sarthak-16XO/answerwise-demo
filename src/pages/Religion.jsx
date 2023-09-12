@@ -59,7 +59,7 @@ const Religion = () => {
                 </div>
             </div>
 
-            <ul className='flex flex-row mb-10  justify-center text-center align-center height: 100vh'>
+            <ul className='grid grid-flow-row grid-cols-3 md:grid-cols-5  lg:grid-cols-10 mb-10  justify-center text-center align-center height: 100vh'>
                 {religionList.map((item, index) => (
                     <div className='border p-4 text-center w-[6.5rem] bg-red-400 rounded-lg m-2' key={index}>
                         <Link to={`/religion/${item}`} className='text-white'>{item}</Link>

@@ -65,7 +65,7 @@ const City = () => {
 
 
       </div>
-      <ul className='grid grid-flow-row grid-cols-7 gap-x-1 gap-y-1'>
+      <ul className='grid grid-flow-row grid-cols-3 md:grid-cols-5  lg:grid-cols-7  gap-x-1 gap-y-1'>
         {filteredCities.map((city, index) => (
           <div className='border text-center  bg-red-400  p-2 w-[6.5rem] rounded-lg m-4' key={index}>
             <Link to={`/city/${city}`} className='text-white'>{city}</Link>

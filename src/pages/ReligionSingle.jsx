@@ -33,10 +33,10 @@ function CasteIndividual() {
     return (
         <>
             <Navbar />
-            <div className='h-max w-full bg-slate-50 items-center m-10 flex flex-row justify-center'>
+            <div className='h-max w-full bg-slate-50 items-center  m-2 lg:m-10 flex flex-row justify-center'>
                 <div className='flex flex-col items-center gap-5 m-5'>
                     <h3 className='font-bold text-3xl text-red-700 underline-offset-2'>{religionname}</h3>
-                    <div className="grid grid-flow-row grid-cols-4 gap-2">
+                    <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                         {adsList
                             .filter((ads) => ads.religion === religionname)
                             .map((ads) => {
@@ -55,8 +55,8 @@ function CasteIndividual() {
                                 </div>
                             })}
                         {noResultsFound && (
-                            <div className='text-red-700 text-center font-semibold mt-4'>
-                                No results found for your match.
+                            <div className='text-red-700 md:text-center font-semibold mt-4'>
+                                <p>No results found for your match.</p>
                             </div>
                         )}
                     </div>
