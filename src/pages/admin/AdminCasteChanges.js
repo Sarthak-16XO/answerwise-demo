@@ -146,7 +146,7 @@ const AdminCaste = () => {
                 </div>
             </div>
 
-            <ul className='grid grid-flow-row  grid-cols-7  gap-x-1 gap-y-1'>
+            <ul className='grid grid-flow-row grid-cols-3 md:grid-cols-5 lg:grid-cols-7  gap-x-1 gap-y-1'>
                 {filteredCastes.map((item, index) => (
                     <div className='border text-center w-[6.5rem] p-2 bg-red-400 rounded-lg m-4' key={index}>
                         <Link to={`/caste/${item}`} className='text-white'>{item}</Link>
