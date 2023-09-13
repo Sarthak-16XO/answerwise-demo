@@ -18,7 +18,6 @@ import CitySingle from "./pages/CitySingle";
 
 import AdminReligionChanges from "./pages/admin/AdminReligionChanges";
 import AdminCityChanges from "./pages/admin/AdminCityChanges";
-import AdminChanges from "./pages/admin/AdminChanges";
 import AdminCasteChanges from "./pages/admin/AdminCasteChanges";
 import AdminLogin from "./pages/admin/AdminLogin";
 
@@ -48,7 +47,6 @@ function App() {
 
          {/* Admin Links */}
         <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/changes" element={<AdminChanges />} />
         <Route path="/admin/castechanges" element={<AdminCasteChanges />} />
         <Route path="/admin/religionchanges" element={<AdminReligionChanges />} />
         <Route path="/admin/citychanges" element={<AdminCityChanges />} />

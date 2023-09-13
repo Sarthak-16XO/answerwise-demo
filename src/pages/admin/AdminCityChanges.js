@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { doc, getDoc, setDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import db from '../../firebase';
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/NavbarAdmin";
 
 const AdminCity = () => {
   const [citiesList, setCitiesList] = useState([]);
@@ -22,12 +22,11 @@ const AdminCity = () => {
 
   const setCityDisplay = () => {
     setAddCityDisplay(true);
-}
+  }
 
-const setCityDelDisplay = () => {
+  const setCityDelDisplay = () => {
     setDeleteCityDisplay(true);
-}
-
+  }
 
   const handleAddCities = async () => {
     try {
@@ -171,7 +170,7 @@ const setCityDelDisplay = () => {
                 Add a City
               </label>
               <input class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " id="username" type="text" placeholder="" onChange={(event) => { setAddCity(event.target.value) }} required />
-              <button type='submit' className='w-full text-lg p-3 bg-red-300 rounded-lg' onClick={() => handleAddCities()}>Add a City</button>
+              <button type='submit' className='w-full mt-4 text-lg p-3 bg-red-300 rounded-lg' onClick={() => handleAddCities()}>Add a City</button>
             </div>
           </div>
         </div>
@@ -193,7 +192,7 @@ const setCityDelDisplay = () => {
                 Delete a City
               </label>
               <input class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " id="username" type="text" placeholder="" onChange={(event) => { setDeleteCity(event.target.value) }} required />
-              <button type='submit' className='w-full text-lg p-3 bg-red-300 rounded-lg' onClick={() => handleDeleteCities()}>Delete a City</button>
+              <button type='submit' className='w-full mt-4 text-lg p-3 bg-red-300 rounded-lg' onClick={() => handleDeleteCities()}>Delete a City</button>
             </div>
           </div>
         </div>

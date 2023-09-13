@@ -9,7 +9,6 @@ import Footer from '../components/Footer';
 const Religion = () => {
     const [filteredReligion, setFilteredReligion] = useState([]);
     const [searchText, setSearchText] = useState('');
-    const [religion, setReligion] = useState();
     const [religionList, setReligionList] = useState([]); // State to store caste values
 
     useEffect(() => {

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { doc, getDoc, setDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 import db from '../../firebase';
 import { Link } from 'react-router-dom';
-import Navbar from '../../components/Navbar';
+import Navbar from "../../components/NavbarAdmin";
 import Footer from '../../components/Footer';
 
 const AdminCaste = () => {
@@ -105,6 +105,7 @@ const AdminCaste = () => {
         } catch (error) {
             console.error('Error deleting caste: ', error);
         }
+        setDeleteCasteDisplay(false);
     };
     
 
@@ -170,7 +171,7 @@ const AdminCaste = () => {
                                 Add a Caste
                             </label>
                             <input class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " id="username" type="text" placeholder="" onChange={(event) => { setAddCaste(event.target.value) }} required />
-                            <button type='submit' className='w-full bg-red-300 rounded-lg' onClick={() => handleAddCaste()}>Add a Caste</button>
+                            <button type='submit' className='w-full mt-4 text-lg p-3 bg-red-300 rounded-lg' onClick={() => handleAddCaste()}>Add a Caste</button>
                         </div>
                     </div>
                 </div>
@@ -192,7 +193,7 @@ const AdminCaste = () => {
                                 Delete a Caste
                             </label>
                             <input class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " id="username" type="text" placeholder="" onChange={(event) => { setDeleteCaste(event.target.value) }} required />
-                            <button type='submit' className='w-full text-lg p-3 bg-red-300 rounded-lg' onClick={() => handleDeleteCaste()}>Delete a Caste</button>
+                            <button type='submit' className='w-full mt-4 text-lg p-3 bg-red-300 rounded-lg' onClick={() => handleDeleteCaste()}>Delete a Caste</button>
                         </div>
                     </div>
                 </div>
