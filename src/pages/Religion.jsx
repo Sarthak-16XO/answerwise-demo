@@ -68,7 +68,7 @@ const Religion = () => {
             <ul className='grid grid-flow-row grid-cols-3 md:grid-cols-5  lg:grid-cols-7  gap-x-1 gap-y-1'>
             {filteredReligion.map((religion, index) => (
               <div className='border text-center  bg-red-400  p-2 w-[6.5rem] rounded-lg m-4' key={index}>
-                <Link to={`/city/${religion}`} className='text-white'>{religion}</Link>
+                <Link to={`/religion/${religion}`} className='text-white'>{religion}</Link>
               </div>
             ))}
           </ul>

@@ -29,6 +29,10 @@ const Form = () => {
     // Loading from DB
     const [citiesList, setCitiesList] = useState([]);
     const [filteredCities, setFilteredCities] = useState([]);
+
+    const [ReligionList, setReligionList] = useState([]);
+    const [filteredReligion, setFilteredReligion] = useState([]);
+
     const [searchText, setSearchText] = useState('');
     const [filteredCastes, setFilteredCastes] = useState([]);
     const [casteList, setCasteList] = useState([]); // State to store caste values
@@ -86,8 +90,34 @@ const Form = () => {
         getCities();
     }, []);
 
-    const inputRef = useRef();
-    const inputsRef = useRef();
+    useEffect(() => {
+        const getReligion = async () => {
+            // Get the 'citiesData' document
+            const religionDataRef = doc(db, 'religion', 'religionData');
+
+            try {
+                const religionDataSnap = await getDoc(religionDataRef);
+                if (religionDataSnap.exists()) {
+                    const religionOptions = religionDataSnap.data().religionData || [];
+                    const filteredReligion = religionOptions
+                        .filter(city => city)
+                        .sort((a, b) => a.localeCompare(b)); // Sort cities alphabetically
+
+                    setReligionList(filteredReligion);
+                    setFilteredReligion(filteredReligion);
+                    console.log(filteredReligion);
+                } else {
+                    console.log('The "citiesData" document does not exist.');
+                }
+            } catch (error) {
+                console.error('Error fetching city data: ', error);
+            }
+        };
+
+        getReligion();
+    }, []);
+
+
     // const castesValues = [];
 
     // useEffect(() => {
@@ -124,6 +154,8 @@ const Form = () => {
 
     // }, []); // Add an empty dependency array to run the effect only once
 
+
+    // Posting ADs
     const adsCollectionRef = collection(db, "ads");
     let navigate = useNavigate();
     const createAds = async () => {
@@ -223,21 +255,13 @@ const Form = () => {
                             <select name="religion" id="religion" class="bg-gray-50 cursor-pointer border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " onChange={(event) => {
                                 setReligion(event.target.value);
                             }} required>
-                                <option value="Religion">Select Religion</option>
-                                <option value="Hindu">Hindu</option>
-                                <option value="Sikh">Sikh</option>
-                                <option value="Christian">Christian</option>
-                                <option value="Muslim">Muslim</option>
-                                <option value="Jain">Jain</option>
-                                <option value="Buddhist">Buddhist</option>
-                                <option value="Parsi">Parsi</option>
-                                <option value="Jewish">Jewish</option>
-                                <option value="No Religion">No Religion</option>
-                                <option value="Spiritual">Spiritual</option>
-                                <option value="Nepali">Nepali</option>
-                                <option value="Others">Others</option>
+                                <option selected value="Caste">Select Religion</option>
+                                {filteredReligion.map((religion, index) => (
+                                    <option value={religion} >{religion}</option>
+                                ))}
                             </select>
                         </div>
+
                         <div class="mb-4">
                             <label for="caste" class="block cursor-pointer mb-2 text-lg font-medium text-slate-500">Your Caste *</label>
                             <select name="caste" id="caste" class="bg-gray-50 border cursor-pointer border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " onChange={(event) => {

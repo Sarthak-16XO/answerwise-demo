@@ -108,8 +108,6 @@ const AdminCaste = () => {
         setDeleteCasteDisplay(false);
     };
     
-
-
     useEffect(() => {
         // Filter the cities based on the search text
         const filtered = casteList.filter(caste => caste && caste.toLowerCase().includes(searchText.toLowerCase()));

@@ -26,10 +26,10 @@ const NRI = () => {
     return (
         <>
             <Navbar />
-            <div className='h-max w-full bg-slate-50 items-center m-10 flex flex-row justify-center'>
-                <div className='flex flex-col items-center gap-5 m-5'>
+            <div className='h-max w-full bg-slate-50 items-center  mt-5 lg:m-10 flex flex-row justify-center'>
+                <div className='flex flex-col items-center gap-5 '>
                     <h3 className='font-bold text-3xl text-red-700 underline-offset-2'>NRI</h3>
-                    <div className="grid grid-flow-row grid-cols-4 gap-2">
+                    <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                         {adsList
                             .filter((ads) => ads.nri === true)
                             .map((ads) => {
