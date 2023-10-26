@@ -59,9 +59,23 @@ const AnswerWise = ({ apiKey, color = "#8b5cf6", questions, theme }) => {
     ), 
     radial-gradient(at  0% 0%, rgb(22, 255, 255), transparent 40%),
     radial-gradient(at 94% 88%, rgb(238, 9, 70) 0px, transparent 60%)`;
+    backgroundImageMobile = `radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ), 
+    radial-gradient(at  0% 0%, rgb(22, 255, 255), transparent 40%),
+    radial-gradient(at 94% 88%, rgb(238, 9, 70) 0px, transparent 60%)`;
     backgroundColour = "#161616"
   } else if (theme === "dark1") {
     backgroundImageStyle = `radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ), 
+    radial-gradient(at  0% 9%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 94% 88%, hsla(256, 96%, 77%, 1) 0px, transparent 60%)`;
+    backgroundImageMobile = `radial-gradient(
       at 27% 37%,
       hsla(215, 98%, 61%, 1) 0px,
       transparent 0%
@@ -117,6 +131,13 @@ const AnswerWise = ({ apiKey, color = "#8b5cf6", questions, theme }) => {
     ), 
     radial-gradient(at  0% 9%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
     radial-gradient(at 94% 88%, hsla(256, 96%, 77%, 1) 0px, transparent 60%)`;
+    backgroundImageMobile = `radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ), 
+    radial-gradient(at  0% 9%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 94% 88%, hsla(256, 96%, 77%, 1) 0px, transparent 60%)`;
     backgroundColour = "white";
     iconColor = "black";
 
@@ -163,7 +184,7 @@ const AnswerWise = ({ apiKey, color = "#8b5cf6", questions, theme }) => {
     background: backgroundImageMobile,
     backgroundColor: backgroundColour,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: '500px 600px',
+    backgroundSize: 'h-[100%]',
   };
 
   return (
