@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
 
-    <nav className="bg-white border-b border-gray-200">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 border-b border-gray-200">
+    <nav className="bg-slate-800 border-b border-gray-800">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 border-b border-gray-600">
         <Link to='/' className="flex items-center">
           <img src={logo} className="h-10 mr-3 rounded-md" alt="Answerwise Logo" />
-          <img src={brandname} className="h-10 mr-3 rounded-md" alt="Answerwise Logo" />
+          <p  className="mr-3 rounded-md text-white text-2xl" alt="Answerwise Logo">answerwise.ai</p>
         </Link>
 
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
